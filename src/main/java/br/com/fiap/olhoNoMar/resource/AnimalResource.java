@@ -1,10 +1,9 @@
 package br.com.fiap.olhoNoMar.resource;
 
-import br.com.fiap.olhoNoMar.dto.request.PescadorRequest;
-import br.com.fiap.olhoNoMar.dto.response.PescadorResponse;
-import br.com.fiap.olhoNoMar.entity.Pescador;
-import br.com.fiap.olhoNoMar.service.PescadorService;
-import jakarta.validation.Valid;
+import br.com.fiap.olhoNoMar.dto.request.AnimalRequest;
+import br.com.fiap.olhoNoMar.dto.response.AnimalResponse;
+import br.com.fiap.olhoNoMar.entity.Animal;
+import br.com.fiap.olhoNoMar.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -17,22 +16,24 @@ import java.util.Collection;
 import java.util.Objects;
 
 @RestController
-@RequestMapping(value = "/pescador")
-public class PescadorResource implements ResourceDTO<PescadorRequest, PescadorResponse> {
+@RequestMapping(value = "/animal")
+public class AnimalResource implements ResourceDTO<AnimalRequest, AnimalResponse> {
 
     @Autowired
-    private PescadorService service;
+    private AnimalService service;
 
     @GetMapping
-    public ResponseEntity<Collection<PescadorResponse>> findAll(
+    public ResponseEntity<Collection<AnimalResponse>> findAll(
             @RequestParam(name = "nome", required = false) String nome,
-            @RequestParam(name = "rgp", required = false) String rgp,
-            @RequestParam(name = "telefone", required = false) String telefone
+            @RequestParam(name = "epocaReproducao", required = false) String epocaReproducao,
+            @RequestParam(name = "epocaPesca", required = false) String epocaPesca,
+            @RequestParam(name = "qtdPermitida", required = false) Double qtdPermitida
     ){
-        var pescador = Pescador.builder()
+        var animal = Animal.builder()
                 .nome(nome)
-                .rgp(rgp)
-                .telefone(telefone)
+                .epocaReproducao(epocaReproducao)
+                .epocaPesca(epocaPesca)
+                .qtdPermitida(qtdPermitida)
                 .build();
 
         ExampleMatcher matcher = ExampleMatcher
@@ -40,20 +41,20 @@ public class PescadorResource implements ResourceDTO<PescadorRequest, PescadorRe
                 .withIgnoreNullValues()
                 .withIgnoreCase();
 
-        Example<Pescador> example = Example.of(pescador, matcher);
-        Collection<Pescador> pescadores = service.findAll(example);
+        Example<Animal> example = Example.of(animal, matcher);
+        Collection<Animal> animais = service.findAll(example);
 
-        if (Objects.isNull(pescadores))
+        if (Objects.isNull(animais))
             return ResponseEntity.notFound().build();
 
-        var response = pescadores.stream().map(service::toResponse).toList();
+        var response = animais.stream().map(service::toResponse).toList();
 
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "{id}")
     @Override
-    public ResponseEntity<PescadorResponse> findById(@PathVariable Long id) {
+    public ResponseEntity<AnimalResponse> findById(Long id) {
         var entity = service.findById(id);
         if (Objects.isNull(entity))
             return ResponseEntity.notFound().build();
@@ -64,7 +65,7 @@ public class PescadorResource implements ResourceDTO<PescadorRequest, PescadorRe
     @PostMapping
     @Transactional
     @Override
-    public ResponseEntity<PescadorResponse> save(@RequestBody @Valid PescadorRequest r) {
+    public ResponseEntity<AnimalResponse> save(AnimalRequest r) {
         var entity = service.toEntity(r);
         var saved = service.save(entity);
         var response = service.toResponse(saved);
