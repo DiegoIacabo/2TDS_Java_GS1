@@ -15,6 +15,9 @@ public record LicencaRequest(
         String tipo,
 
         @NotNull(message = "A data de emissão deve ser informada.")
-        LocalDate dataEmissao
+        LocalDate dataEmissao,
+
+        @NotNull(message = "O pescador da licença deve ser informado.")
+        AbstractRequest pescador
 ) {
 }

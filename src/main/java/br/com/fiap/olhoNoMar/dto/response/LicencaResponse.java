@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public record LicencaResponse(
         Long id,
         String situacao,
+        String tipo,
         LocalDate dataEmissao,
         LocalDate dataValidade,
         PescadorResponse pescador

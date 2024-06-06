@@ -17,6 +17,9 @@ public record AtividadeRequest(
         LocalDateTime inicio,
 
         @NotNull(message = "A data do fim da atividade é obrigatória.")
-        LocalDateTime fim
+        LocalDateTime fim,
+
+        @NotNull(message = "O pescador deve ser informado.")
+        AbstractRequest pescador
 ) {
 }
