@@ -26,7 +26,7 @@ public class Licenca {
 
     private String tipo;
 
-    private LocalDate dataInicio;
+    private LocalDate dataEmissao;
 
     private LocalDate dataValidade;
 

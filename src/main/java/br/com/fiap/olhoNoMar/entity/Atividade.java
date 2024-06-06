@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -26,9 +27,9 @@ public class Atividade {
 
     private String localFinal;
 
-    private LocalDate data;
+    private LocalDateTime inicio;
 
-    private String duracao;
+    private LocalDateTime fim;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(
