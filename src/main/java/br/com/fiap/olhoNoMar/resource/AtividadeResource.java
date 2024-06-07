@@ -5,6 +5,7 @@ import br.com.fiap.olhoNoMar.dto.response.AtividadeResponse;
 import br.com.fiap.olhoNoMar.entity.Atividade;
 import br.com.fiap.olhoNoMar.entity.Pescador;
 import br.com.fiap.olhoNoMar.service.AtividadeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -77,7 +78,7 @@ public class AtividadeResource implements ResourceDTO<AtividadeRequest, Atividad
     @PostMapping
     @Transactional
     @Override
-    public ResponseEntity<AtividadeResponse> save(AtividadeRequest r) {
+    public ResponseEntity<AtividadeResponse> save(@RequestBody @Valid AtividadeRequest r) {
         var entity = service.toEntity(r);
         var saved = service.save(entity);
         var response = service.toResponse(saved);

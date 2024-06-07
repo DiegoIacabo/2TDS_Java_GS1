@@ -6,6 +6,7 @@ import br.com.fiap.olhoNoMar.entity.Licenca;
 import br.com.fiap.olhoNoMar.entity.Pescador;
 import br.com.fiap.olhoNoMar.service.LicencaService;
 import br.com.fiap.olhoNoMar.service.PescadorService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -78,7 +79,7 @@ public class LicencaResource implements ResourceDTO<LicencaRequest, LicencaRespo
     @PostMapping
     @Transactional
     @Override
-    public ResponseEntity<LicencaResponse> save(LicencaRequest r) {
+    public ResponseEntity<LicencaResponse> save(@RequestBody @Valid LicencaRequest r) {
         var entity = service.toEntity(r);
         var saved = service.save(entity);
         var response = service.toResponse(saved);

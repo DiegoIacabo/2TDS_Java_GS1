@@ -23,12 +23,16 @@ public class Atividade {
     @Column(name = "ID_ATIVIDADE")
     private Long id;
 
+    @Column(nullable = false)
     private String local;
 
+    @Column(nullable = false)
     private String localFinal;
 
+    @Column(nullable = false)
     private LocalDateTime inicio;
 
+    @Column(nullable = false)
     private LocalDateTime fim;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})

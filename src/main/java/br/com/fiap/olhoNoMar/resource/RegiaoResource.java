@@ -84,7 +84,7 @@ public class RegiaoResource implements ResourceDTO<RegiaoRequest, RegiaoResponse
     @PostMapping
     @Transactional
     @Override
-    public ResponseEntity<RegiaoResponse> save(RegiaoRequest r) {
+    public ResponseEntity<RegiaoResponse> save(@RequestBody @Valid RegiaoRequest r) {
         var entity = service.toEntity(r);
         var saved = service.save(entity);
         var response = service.toResponse(saved);

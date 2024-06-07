@@ -23,9 +23,12 @@ public class Animal {
     @Column(name = "NM_ANIMAL", nullable = false)
     private String nome;
 
+    @Column(nullable = false)
     private String epocaReproducao;
 
+    @Column(nullable = false)
     private String epocaPesca;
 
+    @Column(nullable = false)
     private Double qtdPermitida;
 }

@@ -22,10 +22,13 @@ public class Licenca {
     @Column(name = "ID_LICENCA")
     private Long id;
 
+    @Column(nullable = false)
     private String situacao;
 
+    @Column(nullable = false)
     private String tipo;
 
+    @Column(nullable = false)
     private LocalDate dataEmissao;
 
     private LocalDate dataValidade;

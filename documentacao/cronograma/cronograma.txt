@@ -1,0 +1,22 @@
+Cronograma das Entregas
+
+-> Kick off do desafio (Realizado no dia 27/05)
+
+-> Definição da solução proposta pelo grupo e planejamento das entregas (Realizado no dia 03/06)
+
+-> (Todos os Integrantes) Início do desenvolvimento da Arquitetura de Solução para saber as metas e o que deve ser feito para atender 
+os requisitos estabelecidos (Terminar até o dia 04/06 para iniciar o desenvolvimento das outras entregas) - Feito no prazo
+
+-> (Diego) Realizar a modelagem do Banco de Dados para servir de base para as entregas de Java e .NET (Terminar até o dia 04/06) - Feito no prazo
+
+-> (Luiz) Realizar o entregável de DevOps (Terminar até o dia da entrega, 07/06) - Feito no prazo
+
+-> (Cristian) Realizar o entregável de Mobile (Terminar até o dia da entrega, 07/06) - Feito no prazo
+
+-> (Giovanni) Realizar o entregável de Disruptive Architectures e estrutar o Azure Boards para a matéria de Compliance (Terminar até o dia da entrega, 07/06) - Feito no prazo
+
+-> (Diego) Realizar o entregável de Java e .NET, além de fazer os scrpits necessários para terminar o entregável de Banco de Dados (Terminar até o dia da entrega, 07/06) - Feito no prazo
+
+
+
+

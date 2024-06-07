@@ -4,6 +4,7 @@ import br.com.fiap.olhoNoMar.dto.request.AnimalRequest;
 import br.com.fiap.olhoNoMar.dto.response.AnimalResponse;
 import br.com.fiap.olhoNoMar.entity.Animal;
 import br.com.fiap.olhoNoMar.service.AnimalService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -54,7 +55,7 @@ public class AnimalResource implements ResourceDTO<AnimalRequest, AnimalResponse
 
     @GetMapping(value = "{id}")
     @Override
-    public ResponseEntity<AnimalResponse> findById(Long id) {
+    public ResponseEntity<AnimalResponse> findById(@PathVariable Long id) {
         var entity = service.findById(id);
         if (Objects.isNull(entity))
             return ResponseEntity.notFound().build();
@@ -65,7 +66,7 @@ public class AnimalResource implements ResourceDTO<AnimalRequest, AnimalResponse
     @PostMapping
     @Transactional
     @Override
-    public ResponseEntity<AnimalResponse> save(AnimalRequest r) {
+    public ResponseEntity<AnimalResponse> save(@RequestBody @Valid AnimalRequest r) {
         var entity = service.toEntity(r);
         var saved = service.save(entity);
         var response = service.toResponse(saved);
