@@ -34,7 +34,7 @@
  - Link: https://github.com/DiegoIacabo/2TDS_Java_GS1
 
 ## Vídeo Pitch
- - Link: 
+ - Link: https://youtu.be/L-WEVJkS1zY
 
 ## Vídeo do Teste do Software
- - Link: 
+ - Link: https://youtu.be/Kk8uFsfKeNg
