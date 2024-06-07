@@ -1,0 +1,576 @@
+{
+	"info": {
+		"_postman_id": "66705ee2-b17f-471d-98f0-15096c65f8b2",
+		"name": "OlhoNoMar-GlobalSolution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33568382"
+	},
+	"item": [
+		{
+			"name": "Pescador",
+			"item": [
+				{
+					"name": "POST-PESCADOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Diego\",\r\n    \"rgp\": \"1234567\",\r\n    \"telefone\": \"11 96434-3122\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/pescador",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pescador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-PESCADOR2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Giovanni\",\r\n    \"rgp\": \"7654321\",\r\n    \"telefone\": \"17 93457-3575\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/pescador",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pescador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PESCADOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/pescador",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pescador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PESCADOR-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/pescador/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pescador",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-PESCADOR-BY-EXAMPLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/pescador?nome=giovanni",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pescador"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "giovanni"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Licença",
+			"item": [
+				{
+					"name": "POST-LICENCA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"situacao\": \"Ativa\",\r\n    \"tipo\": \"A\",\r\n    \"dataEmissao\": \"2018-01-07\",\r\n    \"pescador\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/licenca",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"licenca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-LICENCA2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"situacao\": \"Não ativa\",\r\n  \"tipo\": \"B\",\r\n  \"dataEmissao\": \"2024-06-07\",\r\n  \"pescador\": {\r\n    \"id\": 2\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/licenca",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"licenca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-LICENCA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/licenca",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"licenca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-LICENCA-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/licenca/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"licenca",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-LICENCA-BY-EXAMPLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/licenca?tipo=b",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"licenca"
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atividade",
+			"item": [
+				{
+					"name": "POST-ATIVIDADE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"local\": \"-23° 57' 2.43''S -46° 20' 12.33'' W\",\r\n  \"localFinal\": \"-23° 57' 2.43''S -46° 20' 12.34'' W\",\r\n  \"inicio\": \"2024-06-07T11:15:25.467Z\",\r\n  \"fim\": \"2024-06-07T11:15:25.467Z\",\r\n  \"pescador\": {\r\n    \"id\": 1\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/atividade",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"atividade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-ATIVIDADE2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"local\": \"-23° 57' 2.43''N -46° 20' 12.33'' E\",\r\n  \"localFinal\": \"-23° 57' 2.43''N -46° 20' 12.34'' E\",\r\n  \"inicio\": \"2024-05-07T11:15:25.467Z\",\r\n  \"fim\": \"2024-05-07T11:15:25.467Z\",\r\n  \"pescador\": {\r\n    \"id\": 2\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/atividade",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"atividade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ATIVIDADE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/atividade",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"atividade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ATIVIDADE-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/atividade/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"atividade",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ATIVIDADE-BY-EXAMPLE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/atividade?local=-23° 57' 2.43''N -46° 20' 12.33'' E",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"atividade"
+							],
+							"query": [
+								{
+									"key": "local",
+									"value": "-23° 57' 2.43''N -46° 20' 12.33'' E"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Animal",
+			"item": [
+				{
+					"name": "POST-ANIMAL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Tambaqui\",\r\n  \"epocaReproducao\": \"Junho-Agosto\",\r\n  \"epocaPesca\": \"Outubro-Fevereiro\",\r\n  \"qtdPermitida\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/animal",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"animal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-ANIMAL2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Tubarão\",\r\n  \"epocaReproducao\": \"Janeiro-Março\",\r\n  \"epocaPesca\": \"Julho-Novembro\",\r\n  \"qtdPermitida\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/animal",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"animal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ANIMAL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/animal",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"animal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ANIMAL-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/animal/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"animal",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-ANIMAL-BY-EXAMPLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/animal?qtdPermitida=100",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"animal"
+							],
+							"query": [
+								{
+									"key": "qtdPermitida",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Região",
+			"item": [
+				{
+					"name": "POST-REGIAO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Por ali ó\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/regiao",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"regiao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-REGIAO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/regiao",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"regiao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-REGIAO-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/regiao/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"regiao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-REGIAO-ANIMAL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/regiao/1/animais",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"regiao",
+								"1",
+								"animais"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

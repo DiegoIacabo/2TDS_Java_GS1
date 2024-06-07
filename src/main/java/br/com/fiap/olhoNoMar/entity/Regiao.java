@@ -37,7 +37,7 @@ public class Regiao {
                     )
             },
             inverseJoinColumns = {
-                    @JoinColumn(
+                   @JoinColumn(
                             name = "ANIMAL",
                             referencedColumnName = "ID_ANIMAL",
                             foreignKey = @ForeignKey(name = "FK_ANIMAL_REGIAO")
